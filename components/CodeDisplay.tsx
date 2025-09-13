@@ -46,7 +46,6 @@ const CodeBlock: React.FC<{ title: string, code: string, isActionActive: boolean
     const lines = code.split('\n');
     return (
         <div className="bg-gray-100 dark:bg-gray-900/50 rounded-lg flex flex-col h-full shadow-inner overflow-hidden">
-            {/* IDE-style Title Bar */}
             <div className="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-800/80 border-b border-gray-300 dark:border-gray-700">
                 <div className="flex gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -56,7 +55,7 @@ const CodeBlock: React.FC<{ title: string, code: string, isActionActive: boolean
                 <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 flex-grow text-center">{title}.c</h3>
             </div>
             
-            <pre className="text-base font-mono whitespace-pre-wrap flex-grow overflow-auto p-4">
+            <pre className="text-base font-mono whitespace-pre-wrap flex-grow overflow-hidden p-4">
                 {lines.map((line, index) => {
                     const lineNumber = index + 1;
                     const isHighlighted = isActionActive && lineNumber === highlightedLine;
